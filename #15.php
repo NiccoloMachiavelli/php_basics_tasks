@@ -4,8 +4,8 @@
 //На экран выводить результат в зависимости от значений этих переменных.
 //Не забудьте про деление на 0, если надо - выдавать ошибку что на 0 делить нельзя.
 
-$a=55;
-$b=3;
+$a=50;
+$b=0;
 $operator= '%';
 
 switch ($operator):
@@ -29,8 +29,10 @@ switch ($operator):
             echo $a,' / ',$b,' = ',$result;}
         break;
     case '%':
+        if($b == 0){echo "Exception devided by 0";}
+        else {
         $result=$a % $b;
-        echo $a,' % ',$b,' = ',$result;
+        echo $a,' % ',$b,' = ',$result;}
         break;
     default:
         echo "Incorrect operator, try more";
